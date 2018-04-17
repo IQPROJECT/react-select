@@ -114,9 +114,9 @@ var menuRenderer = function menuRenderer(_ref) {
 	var Option = optionComponent;
 
 	return options.map(function (option, i) {
-		var isSelected = valueArray && valueArray.some(function (x) {
-			return x[valueKey] === option[valueKey];
-		});
+		//let isSelected = valueArray && valueArray.some(x => x[valueKey] === option[valueKey]);
+		//var isSelected = valueArray && !!_.find(valueArray, option)
+		var isSelected = valueArray && !!valueArray.find(option);
 		var isFocused = option === focusedOption;
 		var optionClass = classNames(optionClassName, {
 			'Select-option': true,
