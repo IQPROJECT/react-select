@@ -24,7 +24,8 @@ const menuRenderer = ({
 	return options.map((option, i) => {
 		//let isSelected = valueArray && valueArray.some(x => x[valueKey] === option[valueKey]);
 		//var isSelected = valueArray && !!_.find(valueArray, option)
-		let isSelected = (valueArray[0] && option) && valueArray[0].get('label') === option.get('label');
+		let isSelected = (valueArray[0] && typeof valueArray[0].get === 'function' && option)
+			&& valueArray[0].get('label') === option.get('label');
 		let isFocused = option === focusedOption;
 		let optionClass = classNames(optionClassName, {
 			'Select-option': true,
